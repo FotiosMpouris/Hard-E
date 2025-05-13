@@ -12,23 +12,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f7f6; /* Light gray-green background */
+            background-color: #f4f7f6; 
         }
 
-        /* Container for consistent width */
         .container {
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 0; /* Adjusted for general use */
+            padding: 20px 0;
         }
 
-        /* Header/Nav */
         header {
-            background-color: #fff; /* White background for header */
+            background-color: #fff;
             padding: 15px 0;
             border-bottom: 1px solid #e0e0e0;
-            text-align: center; /* Keeps the container centered */
+            text-align: center;
         }
 
         header .logo-container {
@@ -45,7 +43,6 @@
             display: block;
         }
         
-        /* Hero Section Styles */
         .hero {
             background-color: #2c3e50;
             color: #fff;
@@ -114,18 +111,28 @@
             padding: 60px 0px;
             text-align: center;
         }
-        .section.features-section { /* Specific for current features */
-             background-color: #e9f0ee; 
+        .section.features-section { 
+             background-color: #e9f0ee; /* Light green/gray for current features */
         }
-        .section.future-features-section { /* Specific for future features */
-             background-color: #ffffff;
+        
+        /* UPDATED: Styling for Future Features Section */
+        .section.future-features-section { 
+             background-color: #34495e; /* Darker slate blue background */
+             color: #f0f0f0; /* Lighter text color for this section */
+        }
+        .future-features-section .section-title,
+        .future-features-section .section-subtitle {
+            color: #ffffff; /* White title and subtitle for dark background */
+        }
+        .future-features-section .section-subtitle {
+            color: #bdc3c7; /* Lighter gray for subtitle */
         }
 
 
         .section-title {
             font-size: 2.2em;
             margin-bottom: 15px;
-            color: #2c3e50;
+            color: #2c3e50; /* Default dark color for titles */
         }
         @media (max-width: 768px) {
             .section-title {
@@ -135,7 +142,7 @@
 
         .section-subtitle {
             font-size: 1.2em;
-            color: #555;
+            color: #555; /* Default dark color for subtitles */
             margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
@@ -149,7 +156,6 @@
             }
         }
 
-        /* Features Grid (Used by both Current and Future Features) */
         .features-grid {
             display: flex;
             flex-wrap: wrap;
@@ -158,28 +164,33 @@
         }
 
         .feature-item {
-            background-color: #fff; /* Default for current features */
+            background-color: #fff; 
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: left;
+            text-align: center; /* Centering text in cards */
             flex-basis: calc(33.333% - 40px);
             min-width: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .feature-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        /* Specific styling for Future Feature Items */
+        /* UPDATED: Specific styling for Future Feature Items */
         .future-features-section .feature-item {
-             background-color: #f8f9fa; /* Slightly different background for future cards */
-             /* border-left: 4px solid #00aaff; */ /* REMOVED THIS LINE */
+             background-color: #ffffff; /* White cards to pop on dark section background */
+             /* Text color within these cards will inherit from body or be overridden if needed */
+        }
+        .future-features-section .feature-item h3 {
+            color: #2c3e50; /* Dark text for heading inside white card */
+        }
+        .future-features-section .feature-item p {
+            color: #555; /* Dark text for paragraph inside white card */
         }
         .future-features-section .feature-item .icon-placeholder {
             color: #00aaff; /* Blue icons for future features */
@@ -314,9 +325,9 @@
             <p class="section-subtitle">
                 Hard-E is constantly evolving. Here's a sneak peek at exciting new capabilities being developed to further revolutionize your workflow.
             </p>
-            <div class="features-grid"> <!-- Reusing the features-grid structure -->
+            <div class="features-grid"> 
                 <div class="feature-item">
-                    <div class="icon-placeholder">🎬</div> <!-- Placeholder: Clapperboard for video -->
+                    <div class="icon-placeholder">🎬</div>
                     <h3>Automated Client Videos</h3>
                     <p>
                         Imagine! Personalized primer videos automatically created by combining dynamic audio
@@ -324,7 +335,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">👤</div> <!-- Placeholder: User profile icon -->
+                    <div class="icon-placeholder">👤</div>
                     <h3>Deep Client Insights</h3>
                     <p>
                         Hard-E will build comprehensive client and job profiles, giving you a 360° view
@@ -332,7 +343,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">➕</div> <!-- Placeholder: Plus icon for new clients -->
+                    <div class="icon-placeholder">➕</div>
                     <h3>Effortless Lead Onboarding</h3>
                     <p>
                         Streamline adding new customers to your CRM from various lead sources, directly
@@ -340,7 +351,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">🏞️</div> <!-- Placeholder: Mountain/image icon for site analysis -->
+                    <div class="icon-placeholder">🏞️</div>
                     <h3>Smart On-Site Photo Analysis</h3>
                     <p>
                         Upload job site photos and let Hard-E assist in identifying key details, materials,
@@ -348,7 +359,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">🤝</div> <!-- Placeholder: Handshake for partnerships/integrations -->
+                    <div class="icon-placeholder">🤝</div>
                     <h3>Expanding Ecosystem</h3>
                     <p>
                         Hard-E aims to be a valuable partner, with potential integrations for various CRMs
@@ -356,7 +367,7 @@
                     </p>
                 </div>
                  <div class="feature-item">
-                    <div class="icon-placeholder">⚡</div> <!-- Placeholder: Lightning for speed/latency -->
+                    <div class="icon-placeholder">⚡</div>
                     <h3>Blazing Fast Performance</h3>
                     <p>
                         Ongoing optimizations, including server upgrades and smart caching, ensure Hard-E
