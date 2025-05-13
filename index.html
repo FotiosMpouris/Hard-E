@@ -112,27 +112,53 @@
             text-align: center;
         }
         .section.features-section { 
-             background-color: #e9f0ee; /* Light green/gray for current features */
+             background-color: #e9f0ee; 
         }
         
-        /* UPDATED: Styling for Future Features Section */
         .section.future-features-section { 
-             background-color: #34495e; /* Darker slate blue background */
-             color: #f0f0f0; /* Lighter text color for this section */
+             background-color: #34495e; 
+             color: #f0f0f0; 
         }
         .future-features-section .section-title,
         .future-features-section .section-subtitle {
-            color: #ffffff; /* White title and subtitle for dark background */
+            color: #ffffff; 
         }
         .future-features-section .section-subtitle {
-            color: #bdc3c7; /* Lighter gray for subtitle */
+            color: #bdc3c7; 
+        }
+        
+        /* How It Works Section */
+        .section.how-it-works-section {
+            background-color: #e9f0ee; /* Alternating back to light green/gray */
+        }
+        .how-it-works-section .explanation-text {
+            font-size: 1.1em;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+        .how-it-works-section .diagram-placeholder {
+            background-color: #d0d9d7;
+            border: 2px dashed #b0b9b7;
+            padding: 40px;
+            margin: 0 auto 30px auto;
+            max-width: 600px;
+            min-height: 200px; /* So it has some visible height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-style: italic;
+            border-radius: 8px;
         }
 
 
         .section-title {
             font-size: 2.2em;
             margin-bottom: 15px;
-            color: #2c3e50; /* Default dark color for titles */
+            color: #2c3e50; 
         }
         @media (max-width: 768px) {
             .section-title {
@@ -142,7 +168,7 @@
 
         .section-subtitle {
             font-size: 1.2em;
-            color: #555; /* Default dark color for subtitles */
+            color: #555; 
             margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
@@ -168,7 +194,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center; /* Centering text in cards */
+            text-align: center;
             flex-basis: calc(33.333% - 40px);
             min-width: 280px;
             display: flex;
@@ -181,19 +207,17 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        /* UPDATED: Specific styling for Future Feature Items */
         .future-features-section .feature-item {
-             background-color: #ffffff; /* White cards to pop on dark section background */
-             /* Text color within these cards will inherit from body or be overridden if needed */
+             background-color: #ffffff; 
         }
         .future-features-section .feature-item h3 {
-            color: #2c3e50; /* Dark text for heading inside white card */
+            color: #2c3e50; 
         }
         .future-features-section .feature-item p {
-            color: #555; /* Dark text for paragraph inside white card */
+            color: #555; 
         }
         .future-features-section .feature-item .icon-placeholder {
-            color: #00aaff; /* Blue icons for future features */
+            color: #00aaff; 
             border: 2px solid #00aaff;
         }
 
@@ -211,7 +235,7 @@
 
         .feature-item .icon-placeholder {
             font-size: 2.5em;
-            color: #4CAF50; /* Hard-E Green for current feature icons */
+            color: #4CAF50; 
             margin-bottom: 20px;
             width: 60px;
             height: 60px;
@@ -237,7 +261,6 @@
 </head>
 <body>
 
-    <!-- Header with Logo -->
     <header>
         <div class="container">
             <div class="logo-container">
@@ -246,7 +269,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h1>Meet <span style="color: #4CAF50;">Hard-E</span>: Your AI Sales Supercharger</h1>
         <p class="tagline">Streamline Sales. Enhance Client Engagement. Grow Your Contracting Business.</p>
@@ -258,7 +280,6 @@
         <a href="#contact-demo" class="cta-button">Book a Free Demo</a>
     </section>
 
-    <!-- Section: What Can Hard-E Do For You? -->
     <section class="section features-section" id="features">
         <div class="container">
             <h2 class="section-title">What Can <span style="color: #4CAF50;">Hard-E</span> Do For You Today?</h2>
@@ -318,7 +339,6 @@
         </div>
     </section>
 
-    <!-- Section: Glimpse into the Future -->
     <section class="section future-features-section" id="future-features">
         <div class="container">
             <h2 class="section-title">Glimpse into the Future: What's Next for <span style="color: #4CAF50;">Hard-E</span>?</h2>
@@ -374,6 +394,37 @@
                         delivers information and responses with impressive speed.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: How Hard-E Works (Simple Version) -->
+    <section class="section how-it-works-section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How <span style="color: #4CAF50;">Hard-E</span> Works (The Simple Version)</h2>
+            <p class="section-subtitle">
+                No complex jargon here – just a peek under the hood at the smarts behind your new AI partner.
+            </p>
+            <div class="explanation-text">
+                <p>
+                    Think of Hard-E not as a single program, but as a dedicated team of specialized AI 'agents' all working together seamlessly. 
+                    When you speak or type a request, a central 'Triage Agent' intelligently listens and understands what you need. 
+                    It then passes your request to the right specialist:
+                </p>
+                <ul>
+                    <li>One agent is an expert at talking to your CRM (like Leap).</li>
+                    <li>Another agent has memorized all your company's training materials.</li>
+                    <li>A creative agent excels at drafting video scripts.</li>
+                    <li>And another agent can quickly search the web for product details.</li>
+                </ul>
+                <p>
+                    This teamwork, powered by advanced Large Language Models (the same kind of AI behind tools like ChatGPT),
+                    allows Hard-E to handle a wide variety of tasks, understand context, and provide helpful, relevant responses. 
+                    It's designed to be your smart, efficient, and always-available Sales Director assistant!
+                </p>
+            </div>
+            <div class="diagram-placeholder">
+                (Placeholder for a simple diagram: e.g., Central "Hard-E Brain" icon connecting to smaller icons representing "CRM Link", "Knowledge Base", "Script Writer", "Web Search")
             </div>
         </div>
     </section>
