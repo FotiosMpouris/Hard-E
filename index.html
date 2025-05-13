@@ -31,23 +31,23 @@
             text-align: center; /* Keeps the container centered */
         }
 
-        header .logo-container { /* New container for better styling control */
-            display: inline-block; /* Allows centering and background */
-            padding: 10px; /* Space around the logo */
-            background-color: #1e2b37; /* A darker shade from the hero for the logo background */
-            border-radius: 50%; /* Makes the background circular */
-            line-height: 0; /* Helps with vertical alignment of the image in the circle */
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        header .logo-container {
+            display: inline-block;
+            padding: 10px;
+            background-color: #1e2b37;
+            border-radius: 50%;
+            line-height: 0;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
         }
 
         header .logo-container img {
-            max-height: 100px; /* UPDATED as per your request */
-            display: block; /* Removes extra space below image */
+            max-height: 100px;
+            display: block;
         }
         
         /* Hero Section Styles */
         .hero {
-            background-color: #2c3e50; /* Dark blue/charcoal - inspired by Jobber */
+            background-color: #2c3e50;
             color: #fff;
             padding: 80px 20px;
             text-align: center;
@@ -63,20 +63,19 @@
             margin-bottom: 15px;
             font-weight: 600;
         }
-        @media (max-width: 768px) { /* Responsive font size for hero h1 */
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2em;
             }
         }
 
-
         .hero .tagline {
             font-size: 1.6em;
             margin-bottom: 25px;
-            color: #bdc3c7; /* Lighter text for tagline */
+            color: #bdc3c7;
             font-weight: 300;
         }
-        @media (max-width: 768px) { /* Responsive font size for tagline */
+        @media (max-width: 768px) {
             .hero .tagline {
                 font-size: 1.3em;
             }
@@ -88,16 +87,15 @@
             margin: 0 auto 30px auto;
             line-height: 1.7;
         }
-         @media (max-width: 768px) { /* Responsive font size for pitch */
+         @media (max-width: 768px) {
             .hero .pitch {
                 font-size: 1em;
             }
         }
 
-
         .hero .cta-button {
             display: inline-block;
-            background-color: #00aaff; /* Bright blue - Salesforce style */
+            background-color: #00aaff;
             color: #fff;
             padding: 15px 30px;
             text-decoration: none;
@@ -108,28 +106,28 @@
         }
 
         .hero .cta-button:hover {
-            background-color: #0088cc; /* Darker blue on hover */
+            background-color: #0088cc;
         }
 
         /* General Section Styling */
         .section {
-            padding: 60px 0px; /* Adjusted padding for sections */
+            padding: 60px 0px;
             text-align: center;
         }
-        .section:nth-child(even) { /* Alternating background for sections */
-             background-color: #ffffff;
-        }
-        .section:nth-child(odd) { /* First content section after Hero will be odd */
+        .section.features-section { /* Specific for current features */
              background-color: #e9f0ee; 
+        }
+        .section.future-features-section { /* Specific for future features */
+             background-color: #ffffff;
         }
 
 
         .section-title {
             font-size: 2.2em;
             margin-bottom: 15px;
-            color: #2c3e50; /* Dark blue/charcoal */
+            color: #2c3e50;
         }
-        @media (max-width: 768px) { /* Responsive font size for section titles */
+        @media (max-width: 768px) {
             .section-title {
                 font-size: 1.8em;
             }
@@ -138,55 +136,71 @@
         .section-subtitle {
             font-size: 1.2em;
             color: #555;
-            margin-bottom: 50px; /* Increased margin for more space */
+            margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 15px; /* Add padding for smaller screens */
+            padding: 0 15px;
         }
-        @media (max-width: 768px) { /* Responsive font size for subtitles */
+        @media (max-width: 768px) {
             .section-subtitle {
                 font-size: 1em;
                 margin-bottom: 30px;
             }
         }
 
-        /* Features Section Specific Styles */
+        /* Features Grid (Used by both Current and Future Features) */
         .features-grid {
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-            justify-content: space-around; /* Distributes space */
-            gap: 30px; /* Space between feature items */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
         }
 
         .feature-item {
-            background-color: #fff;
+            background-color: #fff; /* Default for current features */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: left; /* Align text to the left within cards */
-            flex-basis: calc(33.333% - 40px); /* For 3 columns, accounting for gap */
-            min-width: 280px; /* Minimum width before wrapping */
+            text-align: left;
+            flex-basis: calc(33.333% - 40px);
+            min-width: 280px;
             display: flex;
-            flex-direction: column; /* Stack icon, title, text vertically */
-            align-items: center; /* Center icon and title */
-            text-align: center; /* Center text as well */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        @media (max-width: 992px) { /* For 2 columns on medium screens */
+        /* Specific styling for Future Feature Items */
+        .future-features-section .feature-item {
+             background-color: #f8f9fa; /* Slightly different background for future cards */
+             border-left: 4px solid #00aaff; /* Blue accent border like Salesforce */
+        }
+        .future-features-section .feature-item .icon-placeholder {
+            color: #00aaff; /* Blue icons for future features */
+            border: 2px solid #00aaff;
+        }
+
+
+        @media (max-width: 992px) {
             .feature-item {
                 flex-basis: calc(50% - 30px);
             }
         }
-        @media (max-width: 600px) { /* For 1 column on small screens */
+        @media (max-width: 600px) {
             .feature-item {
                 flex-basis: 100%;
             }
         }
 
         .feature-item .icon-placeholder {
-            font-size: 2.5em; /* Placeholder for icon */
-            color: #4CAF50; /* Hard-E Green for icons */
+            font-size: 2.5em;
+            color: #4CAF50; /* Hard-E Green for current feature icons */
             margin-bottom: 20px;
             width: 60px;
             height: 60px;
@@ -234,15 +248,15 @@
     </section>
 
     <!-- Section: What Can Hard-E Do For You? -->
-    <section class="section" id="features">
+    <section class="section features-section" id="features">
         <div class="container">
-            <h2 class="section-title">What Can <span style="color: #4CAF50;">Hard-E</span> Do For You?</h2>
+            <h2 class="section-title">What Can <span style="color: #4CAF50;">Hard-E</span> Do For You Today?</h2>
             <p class="section-subtitle">
                 Discover how Hard-E transforms your sales process, giving you more time to focus on what matters most – your clients and your craft.
             </p>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="icon-placeholder">🚀</div> <!-- Placeholder: Rocket for speed/efficiency -->
+                    <div class="icon-placeholder">🚀</div>
                     <h3>Personalized Scripts, Instantly</h3>
                     <p>
                         Hard-E crafts engaging proposal and primer video scripts tailored to each client,
@@ -250,7 +264,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">💡</div> <!-- Placeholder: Lightbulb for knowledge -->
+                    <div class="icon-placeholder">💡</div>
                     <h3>Answers at Your Fingertips</h3>
                     <p>
                         Need product specs, training refreshers, or process clarifications? Hard-E provides
@@ -258,7 +272,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">🔄</div> <!-- Placeholder: Sync/arrows for CRM integration -->
+                    <div class="icon-placeholder">🔄</div>
                     <h3>Seamless CRM Integration</h3>
                     <p>
                         Access and update Leap CRM (and potentially others!) directly through Hard-E.
@@ -266,15 +280,15 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">🗣️</div> <!-- Placeholder: Speech bubble for consistent comms -->
+                    <div class="icon-placeholder">🗣️</div>
                     <h3>Consistent, Pro Communication</h3>
                     <p>
-                        Ensure every client interaction reflects Patriot Contracting's (or your company's)
+                        Ensure every client interaction reflects your company's
                         expertise with Hard-E's persona-aligned, professionally refined responses.
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">⏱️</div> <!-- Placeholder: Clock for time-saving -->
+                    <div class="icon-placeholder">⏱️</div>
                     <h3>Reclaim Your Time</h3>
                     <p>
                         By automating repetitive tasks and providing instant information, Hard-E frees
@@ -282,7 +296,7 @@
                     </p>
                 </div>
                 <div class="feature-item">
-                    <div class="icon-placeholder">📈</div> <!-- Placeholder: Growth chart for business growth -->
+                    <div class="icon-placeholder">📈</div>
                     <h3>Focus on Growth</h3>
                     <p>
                         With streamlined operations and enhanced client engagement, Hard-E empowers you to
@@ -293,8 +307,67 @@
         </div>
     </section>
 
+    <!-- Section: Glimpse into the Future -->
+    <section class="section future-features-section" id="future-features">
+        <div class="container">
+            <h2 class="section-title">Glimpse into the Future: What's Next for <span style="color: #4CAF50;">Hard-E</span>?</h2>
+            <p class="section-subtitle">
+                Hard-E is constantly evolving. Here's a sneak peek at exciting new capabilities being developed to further revolutionize your workflow.
+            </p>
+            <div class="features-grid"> <!-- Reusing the features-grid structure -->
+                <div class="feature-item">
+                    <div class="icon-placeholder">🎬</div> <!-- Placeholder: Clapperboard for video -->
+                    <h3>Automated Client Videos</h3>
+                    <p>
+                        Imagine! Personalized primer videos automatically created by combining dynamic audio
+                        with professional visuals, ready to impress your clients.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-placeholder">👤</div> <!-- Placeholder: User profile icon -->
+                    <h3>Deep Client Insights</h3>
+                    <p>
+                        Hard-E will build comprehensive client and job profiles, giving you a 360° view
+                        and instant answers to project-specific questions.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-placeholder">➕</div> <!-- Placeholder: Plus icon for new clients -->
+                    <h3>Effortless Lead Onboarding</h3>
+                    <p>
+                        Streamline adding new customers to your CRM from various lead sources, directly
+                        through Hard-E, saving valuable data entry time.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-placeholder">🏞️</div> <!-- Placeholder: Mountain/image icon for site analysis -->
+                    <h3>Smart On-Site Photo Analysis</h3>
+                    <p>
+                        Upload job site photos and let Hard-E assist in identifying key details, materials,
+                        and even potential safety considerations.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-placeholder">🤝</div> <!-- Placeholder: Handshake for partnerships/integrations -->
+                    <h3>Expanding Ecosystem</h3>
+                    <p>
+                        Hard-E aims to be a valuable partner, with potential integrations for various CRMs
+                        and industry tools like Hover and James Hardie programs.
+                    </p>
+                </div>
+                 <div class="feature-item">
+                    <div class="icon-placeholder">⚡</div> <!-- Placeholder: Lightning for speed/latency -->
+                    <h3>Blazing Fast Performance</h3>
+                    <p>
+                        Ongoing optimizations, including server upgrades and smart caching, ensure Hard-E
+                        delivers information and responses with impressive speed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- More sections will go here -->
-    <!-- Placeholder for the contact/demo section target -->
     <div id="contact-demo" style="height: 1px;"></div> 
 
 </body>
